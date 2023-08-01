@@ -14,6 +14,15 @@
 		A6CF2D912A7899510084149B /* CardPacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2D902A7899510084149B /* CardPacTests.swift */; };
 		A6CF2D9B2A7899510084149B /* CardPacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2D9A2A7899510084149B /* CardPacUITests.swift */; };
 		A6CF2D9D2A7899510084149B /* CardPacUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2D9C2A7899510084149B /* CardPacUITestsLaunchTests.swift */; };
+		A6CF2DB12A78AA050084149B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DB02A78AA040084149B /* Card.swift */; };
+		A6CF2DB32A78B21D0084149B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DB22A78B21D0084149B /* Constants.swift */; };
+		A6CF2DD02A78D2B00084149B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DCF2A78D2B00084149B /* NetworkManager.swift */; };
+		A6CF2DD22A78D2DC0084149B /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DD12A78D2DC0084149B /* ResponseHandler.swift */; };
+		A6CF2DD42A78D2F80084149B /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DD32A78D2F80084149B /* APIHandler.swift */; };
+		A6CF2DD72A78D3300084149B /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DD62A78D3300084149B /* CardService.swift */; };
+		A6CF2DD92A78D6170084149B /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DD82A78D6170084149B /* CardViewModel.swift */; };
+		A6CF2DDB2A78D89E0084149B /* CardDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DDA2A78D89D0084149B /* CardDetails.swift */; };
+		A6CF2DDD2A78DAFC0084149B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DDC2A78DAFC0084149B /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +53,15 @@
 		A6CF2D962A7899510084149B /* CardPacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardPacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6CF2D9A2A7899510084149B /* CardPacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPacUITests.swift; sourceTree = "<group>"; };
 		A6CF2D9C2A7899510084149B /* CardPacUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPacUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A6CF2DB02A78AA040084149B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		A6CF2DB22A78B21D0084149B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A6CF2DCF2A78D2B00084149B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A6CF2DD12A78D2DC0084149B /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		A6CF2DD32A78D2F80084149B /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		A6CF2DD62A78D3300084149B /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		A6CF2DD82A78D6170084149B /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		A6CF2DDA2A78D89D0084149B /* CardDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetails.swift; sourceTree = "<group>"; };
+		A6CF2DDC2A78DAFC0084149B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +112,14 @@
 		A6CF2D7E2A78994D0084149B /* CardPac */ = {
 			isa = PBXGroup;
 			children = (
+				A6CF2DCE2A78D2970084149B /* Networking */,
 				A6CF2D7F2A78994D0084149B /* CardPacApp.swift */,
+				A6CF2DDC2A78DAFC0084149B /* CardView.swift */,
+				A6CF2DB02A78AA040084149B /* Card.swift */,
+				A6CF2DD82A78D6170084149B /* CardViewModel.swift */,
+				A6CF2DDA2A78D89D0084149B /* CardDetails.swift */,
 				A6CF2D812A78994D0084149B /* ContentView.swift */,
+				A6CF2DB22A78B21D0084149B /* Constants.swift */,
 				A6CF2D832A7899500084149B /* Assets.xcassets */,
 				A6CF2D852A7899500084149B /* Preview Content */,
 			);
@@ -125,6 +149,25 @@
 				A6CF2D9C2A7899510084149B /* CardPacUITestsLaunchTests.swift */,
 			);
 			path = CardPacUITests;
+			sourceTree = "<group>";
+		};
+		A6CF2DCE2A78D2970084149B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A6CF2DD52A78D31B0084149B /* Services */,
+				A6CF2DCF2A78D2B00084149B /* NetworkManager.swift */,
+				A6CF2DD12A78D2DC0084149B /* ResponseHandler.swift */,
+				A6CF2DD32A78D2F80084149B /* APIHandler.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A6CF2DD52A78D31B0084149B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A6CF2DD62A78D3300084149B /* CardService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +300,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6CF2DD42A78D2F80084149B /* APIHandler.swift in Sources */,
+				A6CF2DB12A78AA050084149B /* Card.swift in Sources */,
 				A6CF2D822A78994D0084149B /* ContentView.swift in Sources */,
+				A6CF2DD02A78D2B00084149B /* NetworkManager.swift in Sources */,
+				A6CF2DDB2A78D89E0084149B /* CardDetails.swift in Sources */,
+				A6CF2DB32A78B21D0084149B /* Constants.swift in Sources */,
 				A6CF2D802A78994D0084149B /* CardPacApp.swift in Sources */,
+				A6CF2DD22A78D2DC0084149B /* ResponseHandler.swift in Sources */,
+				A6CF2DD72A78D3300084149B /* CardService.swift in Sources */,
+				A6CF2DDD2A78DAFC0084149B /* CardView.swift in Sources */,
+				A6CF2DD92A78D6170084149B /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,8 +21,9 @@
 		A6CF2DD42A78D2F80084149B /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DD32A78D2F80084149B /* APIHandler.swift */; };
 		A6CF2DD72A78D3300084149B /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DD62A78D3300084149B /* CardService.swift */; };
 		A6CF2DD92A78D6170084149B /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DD82A78D6170084149B /* CardViewModel.swift */; };
-		A6CF2DDB2A78D89E0084149B /* CardDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DDA2A78D89D0084149B /* CardDetails.swift */; };
-		A6CF2DDD2A78DAFC0084149B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DDC2A78DAFC0084149B /* CardView.swift */; };
+		A6CF2DDB2A78D89E0084149B /* CardDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DDA2A78D89D0084149B /* CardDetailsView.swift */; };
+		A6CF2DDD2A78DAFC0084149B /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DDC2A78DAFC0084149B /* CardListView.swift */; };
+		A6CF2DE12A79C67D0084149B /* CardBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2DE02A79C67D0084149B /* CardBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +61,9 @@
 		A6CF2DD32A78D2F80084149B /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		A6CF2DD62A78D3300084149B /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
 		A6CF2DD82A78D6170084149B /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
-		A6CF2DDA2A78D89D0084149B /* CardDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetails.swift; sourceTree = "<group>"; };
-		A6CF2DDC2A78DAFC0084149B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		A6CF2DDA2A78D89D0084149B /* CardDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsView.swift; sourceTree = "<group>"; };
+		A6CF2DDC2A78DAFC0084149B /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
+		A6CF2DE02A79C67D0084149B /* CardBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +115,12 @@
 			isa = PBXGroup;
 			children = (
 				A6CF2DCE2A78D2970084149B /* Networking */,
+				A6CF2DE02A79C67D0084149B /* CardBackground.swift */,
 				A6CF2D7F2A78994D0084149B /* CardPacApp.swift */,
-				A6CF2DDC2A78DAFC0084149B /* CardView.swift */,
+				A6CF2DDC2A78DAFC0084149B /* CardListView.swift */,
 				A6CF2DB02A78AA040084149B /* Card.swift */,
 				A6CF2DD82A78D6170084149B /* CardViewModel.swift */,
-				A6CF2DDA2A78D89D0084149B /* CardDetails.swift */,
+				A6CF2DDA2A78D89D0084149B /* CardDetailsView.swift */,
 				A6CF2D812A78994D0084149B /* ContentView.swift */,
 				A6CF2DB22A78B21D0084149B /* Constants.swift */,
 				A6CF2D832A7899500084149B /* Assets.xcassets */,
@@ -304,12 +307,13 @@
 				A6CF2DB12A78AA050084149B /* Card.swift in Sources */,
 				A6CF2D822A78994D0084149B /* ContentView.swift in Sources */,
 				A6CF2DD02A78D2B00084149B /* NetworkManager.swift in Sources */,
-				A6CF2DDB2A78D89E0084149B /* CardDetails.swift in Sources */,
+				A6CF2DDB2A78D89E0084149B /* CardDetailsView.swift in Sources */,
 				A6CF2DB32A78B21D0084149B /* Constants.swift in Sources */,
 				A6CF2D802A78994D0084149B /* CardPacApp.swift in Sources */,
 				A6CF2DD22A78D2DC0084149B /* ResponseHandler.swift in Sources */,
 				A6CF2DD72A78D3300084149B /* CardService.swift in Sources */,
-				A6CF2DDD2A78DAFC0084149B /* CardView.swift in Sources */,
+				A6CF2DE12A79C67D0084149B /* CardBackground.swift in Sources */,
+				A6CF2DDD2A78DAFC0084149B /* CardListView.swift in Sources */,
 				A6CF2DD92A78D6170084149B /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

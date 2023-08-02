@@ -11,7 +11,7 @@ import SwiftUI
 struct CardPacApp: App {
     var body: some Scene {
         WindowGroup {
-            CardView()
+            CardListView()
         }
     }
 }

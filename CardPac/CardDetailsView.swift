@@ -11,20 +11,25 @@ struct CardDetailsView: View {
     var cardModel: Card
     var body: some View {
         VStack {
-            Text(cardModel.id?.codingKey.stringValue ?? "NA")
-                .font(.title3)
-            Text(cardModel.uid?.codingKey.stringValue ?? "NA")
-                .font(.title2)
-        }.cardBackground()
+
+        }.cardBackground(uid: cardModel.uid?.codingKey.stringValue ?? Constants.COMMON_STRINGS.EMPTY_STRING,
+                         creditCardNumberText: cardModel.credit_card_number?.codingKey.stringValue ?? Constants.COMMON_STRINGS.EMPTY_STRING,
+                         creditCardExpiryDate: cardModel.credit_card_expiry_date ?? Constants.COMMON_STRINGS.EMPTY_STRING,
+                         creditCardType: cardModel.credit_card_type ?? Constants.COMMON_STRINGS.EMPTY_STRING,
+                         creditCardLogo: cardModel.credit_card_type ?? Constants.COMMON_STRINGS.EMPTY_STRING)
             .listRowBackground(Color.clear)
             .listStyle(.plain)
             .listRowSeparator(.hidden)
     }
 }
 
-// view extension for better modifier access
+//view extension for better modifier access
 extension View {
-    func cardBackground() -> some View {
-        modifier(CardBackground())
+    func cardBackground(uid: String, creditCardNumberText: String, creditCardExpiryDate: String, creditCardType: String, creditCardLogo: String) -> some View {
+        modifier(CardBackground(uid: uid,
+                                creditCardNumberText: creditCardNumberText,
+                                creditCardExpiryDate: creditCardExpiryDate,
+                                creditCardType: creditCardType,
+                                creditCardLogo: creditCardLogo))
     }
 }

@@ -9,21 +9,23 @@ import SwiftUI
 
 struct CardListView: View {
     
-    @ObservedObject private var viewModel = CardViewModel()
-    @State private var searchText: String = ""
+    @ObservedObject private var cardViewModel = CardViewModel()
+    @State private var cards: [Card] = []
+    
     var body: some View {
         NavigationView {
             VStack {
-                List {
-                    ForEach(viewModel.cards) { card in
+                List() {
+                    ForEach(cardViewModel.cards.sorted(by: { $0.credit_card_type ?? Constants.COMMON_STRINGS.EMPTY_STRING < $1.credit_card_type ?? Constants.COMMON_STRINGS.EMPTY_STRING })) { card in
                     label:  do {
                         CardDetailsView(cardModel: card)
                         }
                     }
                 }.onAppear() {
-                    viewModel.fetchCards()
+                    cardViewModel.fetchCards()
                 }
-            }.navigationTitle("Card List")
+            }.navigationTitle(Constants.TITLE.CARD_LIST)
+                .font(.headline)
         }
     }
 }
@@ -33,5 +35,3 @@ struct CardListView_Previews: PreviewProvider {
         CardListView()
     }
 }
-
-

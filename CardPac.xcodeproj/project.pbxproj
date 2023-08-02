@@ -114,15 +114,15 @@
 		A6CF2D7E2A78994D0084149B /* CardPac */ = {
 			isa = PBXGroup;
 			children = (
-				A6CF2DCE2A78D2970084149B /* Networking */,
-				A6CF2DE02A79C67D0084149B /* CardBackground.swift */,
 				A6CF2D7F2A78994D0084149B /* CardPacApp.swift */,
+				A6CF2DE02A79C67D0084149B /* CardBackground.swift */,
 				A6CF2DDC2A78DAFC0084149B /* CardListView.swift */,
 				A6CF2DB02A78AA040084149B /* Card.swift */,
 				A6CF2DD82A78D6170084149B /* CardViewModel.swift */,
 				A6CF2DDA2A78D89D0084149B /* CardDetailsView.swift */,
 				A6CF2D812A78994D0084149B /* ContentView.swift */,
 				A6CF2DB22A78B21D0084149B /* Constants.swift */,
+				A6CF2DCE2A78D2970084149B /* Networking */,
 				A6CF2D832A7899500084149B /* Assets.xcassets */,
 				A6CF2D852A7899500084149B /* Preview Content */,
 			);

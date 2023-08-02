@@ -22,3 +22,18 @@ struct Card: Codable, Identifiable {
         case credit_card_type
     }
 }
+
+enum CreditCardType: String {
+    case americanExpress    = "american_express"
+    case dankort            = "dankort"
+    case dinersClub         = "diners_club"
+    case discover           = "discover"
+    case forbrugsforeningen = "forbrugsforeningen"
+    case jcb                = "jcb"
+    case laser              = "laser"
+    case maestro            = "maestro"
+    case masterCard         = "mastercard"
+    case solo               = "solo"
+    case switchCard         = "switch"
+    case visa               = "visa"
+}

@@ -16,9 +16,13 @@ struct CardListView: View {
         NavigationView {
             VStack {
                 List() {
-                    ForEach(cardViewModel.cards.sorted(by: { $0.credit_card_type ?? Constants.COMMON_STRINGS.EMPTY_STRING < $1.credit_card_type ?? Constants.COMMON_STRINGS.EMPTY_STRING })) { card in
+                    ForEach(cardViewModel.groupedSortedCards().keys.sorted(), id: \.self) { key in
+                        Section(header: cardViewModel.modifiedSectionHeaderText(for: key)) {
+                            ForEach(cardViewModel.groupedSortedCards()[key]!, id: \.id) { card in
                     label:  do {
                         CardDetailsView(cardModel: card)
+                        }
+                    }
                         }
                     }
                 }.onAppear() {

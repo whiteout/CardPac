@@ -14,21 +14,16 @@ struct CardBackground: ViewModifier {
     var creditCardExpiryDate : String
     var creditCardType       : String
     var creditCardLogo       : String
+    var bookmarkIcon         : Bool
     
     
     func body(content: Content) -> some View {
         content
         VStack(alignment: .leading, spacing: 20) {
-            
-            HStack {
-                Spacer()
-                Image(systemName: "person")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 40)
-                    .clipped()
-                    .cornerRadius(4)
-            }
+            Image(systemName: bookmarkIcon ? "heart.fill" : "heart")
+                .foregroundColor(.red)
+
+            Spacer()
             
             VStack(spacing: 6) {
                 HStack {

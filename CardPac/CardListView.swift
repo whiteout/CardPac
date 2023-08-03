@@ -19,10 +19,10 @@ struct CardListView: View {
                     ForEach(cardViewModel.groupedSortedCards().keys.sorted(), id: \.self) { key in
                         Section(header: cardViewModel.modifiedSectionHeaderText(for: key)) {
                             ForEach(cardViewModel.groupedSortedCards()[key]!, id: \.id) { card in
-                    label:  do {
-                        CardDetailsView(cardModel: card)
-                        }
-                    }
+                            label:  do {
+                                    CardDetailsView(cardModel: card)
+                                }
+                            }
                         }
                     }
                 }.onAppear() {

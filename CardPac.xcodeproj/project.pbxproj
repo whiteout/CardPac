@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A6CF2D802A78994D0084149B /* CardPacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2D7F2A78994D0084149B /* CardPacApp.swift */; };
-		A6CF2D822A78994D0084149B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2D812A78994D0084149B /* ContentView.swift */; };
 		A6CF2D842A7899500084149B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CF2D832A7899500084149B /* Assets.xcassets */; };
 		A6CF2D872A7899500084149B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CF2D862A7899500084149B /* Preview Assets.xcassets */; };
 		A6CF2D912A7899510084149B /* CardPacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF2D902A7899510084149B /* CardPacTests.swift */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		A6CF2D7C2A78994D0084149B /* CardPac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardPac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6CF2D7F2A78994D0084149B /* CardPacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPacApp.swift; sourceTree = "<group>"; };
-		A6CF2D812A78994D0084149B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A6CF2D832A7899500084149B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6CF2D862A7899500084149B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A6CF2D8C2A7899510084149B /* CardPacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardPacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,13 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				A6CF2D7F2A78994D0084149B /* CardPacApp.swift */,
-				A6CF2DE02A79C67D0084149B /* CardBackground.swift */,
-				A6CF2DDC2A78DAFC0084149B /* CardListView.swift */,
-				A6CF2DB02A78AA040084149B /* Card.swift */,
-				A6CF2DD82A78D6170084149B /* CardViewModel.swift */,
-				A6CF2DDA2A78D89D0084149B /* CardDetailsView.swift */,
-				A6CF2D812A78994D0084149B /* ContentView.swift */,
-				A6CF2DB22A78B21D0084149B /* Constants.swift */,
+				A6CF2DE22A7CAF4C0084149B /* CardModule */,
+				A6CF2DE52A7CAF780084149B /* Common */,
 				A6CF2DCE2A78D2970084149B /* Networking */,
 				A6CF2D832A7899500084149B /* Assets.xcassets */,
 				A6CF2D852A7899500084149B /* Preview Content */,
@@ -171,6 +164,50 @@
 				A6CF2DD62A78D3300084149B /* CardService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A6CF2DE22A7CAF4C0084149B /* CardModule */ = {
+			isa = PBXGroup;
+			children = (
+				A6CF2DE62A7CAFB00084149B /* Views */,
+				A6CF2DE42A7CAF630084149B /* ViewModel */,
+				A6CF2DE32A7CAF590084149B /* Model */,
+			);
+			path = CardModule;
+			sourceTree = "<group>";
+		};
+		A6CF2DE32A7CAF590084149B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6CF2DB02A78AA040084149B /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A6CF2DE42A7CAF630084149B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A6CF2DD82A78D6170084149B /* CardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A6CF2DE52A7CAF780084149B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A6CF2DB22A78B21D0084149B /* Constants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A6CF2DE62A7CAFB00084149B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6CF2DDC2A78DAFC0084149B /* CardListView.swift */,
+				A6CF2DDA2A78D89D0084149B /* CardDetailsView.swift */,
+				A6CF2DE02A79C67D0084149B /* CardBackground.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,7 +342,6 @@
 			files = (
 				A6CF2DD42A78D2F80084149B /* APIHandler.swift in Sources */,
 				A6CF2DB12A78AA050084149B /* Card.swift in Sources */,
-				A6CF2D822A78994D0084149B /* ContentView.swift in Sources */,
 				A6CF2DD02A78D2B00084149B /* NetworkManager.swift in Sources */,
 				A6CF2DDB2A78D89E0084149B /* CardDetailsView.swift in Sources */,
 				A6CF2DB32A78B21D0084149B /* Constants.swift in Sources */,

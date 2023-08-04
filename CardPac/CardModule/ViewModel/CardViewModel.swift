@@ -16,7 +16,7 @@ class CardViewModel: ObservableObject {
     }
     // flag isShowFavorites
     @Published var cards = [Card]()
-     @Published var bookmarkedCards: [Card] = []
+    @Published var bookmarkedCards: [Card] = []
     
     func fetchCards() {
             serviceHandler.getCards { result in
@@ -85,6 +85,11 @@ class CardViewModel: ObservableObject {
     func groupedSortedCards() -> [String: [Card]] {
         let sortedCards = self.sortedCards()
         return Dictionary(grouping: sortedCards, by: { $0.creditCardType ?? Constants.CommonStrings.EmptyString })
+    }
+    
+    
+    func sortBookmarkedCards() {
+        print("toggle bookmarkeds")
     }
     
     // Function to sort the cards based on credit_card_type

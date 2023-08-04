@@ -15,6 +15,8 @@ struct CardListView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Button("Toggle Favorites", action: cardViewModel.sortBookmarkedCards)
+                    .padding()
                 List() {
                     ForEach(cardViewModel.groupedSortedCards().keys.sorted(), id: \.self) { key in
                         Section(header: cardViewModel.modifiedSectionHeaderText(for: key)) {

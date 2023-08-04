@@ -10,11 +10,12 @@ import SwiftUI
 
 class CardViewModel: ObservableObject {
     let serviceHandler: CardServiceDelegate
+    @Published var isShowBookmarkedCards = false
     
     init(serviceHandler: CardServiceDelegate = CardService()) {
         self.serviceHandler = serviceHandler
     }
-    // flag isShowFavorites
+    
     @Published var cards = [Card]()
     @Published var bookmarkedCards: [Card] = []
     
@@ -24,8 +25,6 @@ class CardViewModel: ObservableObject {
                     switch result {
                     case .success(let cards):
                         self.cards = cards
-                        
-                        print(self.cards)
                     case .failure(let error):
                         print(error)
                     }
@@ -34,7 +33,7 @@ class CardViewModel: ObservableObject {
     }
     
     // Function to handle saving the selected card. If card is already in array remove it, else add it.
-      func saveBookedmarkCard(card: Card) {
+      func saveBookmarkedCard(card: Card) {
           
           if let index = bookmarkedCards.firstIndex(where: { $0.id == card.id }) {
               // Card is already in the array, remove it
@@ -43,12 +42,12 @@ class CardViewModel: ObservableObject {
               // Card is not in the array, add it
               bookmarkedCards.append(card)
           }
-          print(bookmarkedCards)
+          
       }
     
-    // Function to modify the section header text using enum cases
+    // Function to rename the section header text using enum cases
     func modifiedSectionHeaderText(for key: String) -> Text {
-        // Convert the key to the CreditCardType enum
+
         if let cardType = CreditCardType(rawValue: key) {
             // Use switch-case on the enum cases
             switch cardType {
@@ -88,14 +87,18 @@ class CardViewModel: ObservableObject {
     }
     
     
-    func sortBookmarkedCards() {
-        print("toggle bookmarkeds")
+    func showBookmarkedCards() {
+        isShowBookmarkedCards.toggle()
     }
     
     // Function to sort the cards based on credit_card_type
     func sortedCards() -> [Card] {
         
-        //before return, if showFave = localFavoriteCards, if false = cards from API
+        if(isShowBookmarkedCards) {
+            // To only show the bookmarked cards
+            return self.bookmarkedCards.sorted(by: { $0.creditCardType ?? Constants.CommonStrings.EmptyString < $1.creditCardType ?? Constants.CommonStrings.EmptyString })
+        }
+        
         return self.cards.sorted(by: { $0.creditCardType ?? Constants.CommonStrings.EmptyString < $1.creditCardType ?? Constants.CommonStrings.EmptyString })
     }
 }

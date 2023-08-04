@@ -27,7 +27,7 @@ struct CardDetailsView: View {
             .onTapGesture {
                 isBookmarked.toggle()
                 // Call the method in the view model to save the selected card
-                cardViewModel.saveBookedmarkCard(card: cardModel)
+                cardViewModel.saveBookmarkedCard(card: cardModel)
             }
     }
 }

@@ -15,7 +15,9 @@ class Constants {
     }
 
     struct Title {
-        public static let CardList = "Card List"
+        public static let CardList      = "Card List"
+        public static let ShowBookMarks = "Show only Bookmarked Cards"
+        public static let ShowAllCards  = "Show All Cards"
     }
     
     struct CommonStrings {

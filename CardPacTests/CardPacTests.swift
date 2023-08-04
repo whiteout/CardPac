@@ -25,7 +25,7 @@ class CardPacTests: XCTestCase {
         
         XCTAssert(cardViewModel.bookmarkedCards.isEmpty)
         
-        cardViewModel.saveBookedmarkCard(card: testCard)
+        cardViewModel.saveBookmarkedCard(card: testCard)
         let firstBookmarkCard = cardViewModel.bookmarkedCards.first
         
         XCTAssertEqual(cardViewModel.bookmarkedCards.count, 1)

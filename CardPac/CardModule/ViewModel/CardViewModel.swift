@@ -88,7 +88,9 @@ class CardViewModel: ObservableObject {
     
     
     func showBookmarkedCards() {
-        isShowBookmarkedCards.toggle()
+        withAnimation() {
+            isShowBookmarkedCards.toggle()
+        }
     }
     
     // Function to sort the cards based on credit_card_type

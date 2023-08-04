@@ -8,18 +8,26 @@
 import Foundation
 
 struct Card: Codable, Identifiable {
-    let id                      : Int?
-    let uid                     : String?
-    let credit_card_number      : String?
-    let credit_card_expiry_date : String?
-    let credit_card_type        : String?
+    let id                   : Int?
+    let uid                  : String?
+    let creditCardNumber     : String?
+    let creditCardExpiryDate : String?
+    let creditCardType       : String?
     
     enum CodingKeys: String, CodingKey {
         case id
         case uid
-        case credit_card_number
-        case credit_card_expiry_date
-        case credit_card_type
+        case creditCardNumber     = "credit_card_number"
+        case creditCardExpiryDate = "credit_card_expiry_date"
+        case creditCardType       = "credit_card_type"
+    }
+    
+    init(id: Int, uid: String, creditCardNumber: String, creditCardExpiryDate: String, creditCardType: String) {
+        self.id                   = id
+        self.uid                  = uid
+        self.creditCardNumber     = creditCardNumber
+        self.creditCardExpiryDate = creditCardExpiryDate
+        self.creditCardType       = creditCardType
     }
 }
 

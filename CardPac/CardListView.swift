@@ -19,16 +19,14 @@ struct CardListView: View {
                     ForEach(cardViewModel.groupedSortedCards().keys.sorted(), id: \.self) { key in
                         Section(header: cardViewModel.modifiedSectionHeaderText(for: key)) {
                             ForEach(cardViewModel.groupedSortedCards()[key]!, id: \.id) { card in
-                            label:  do {
-                                    CardDetailsView(cardModel: card)
-                                }
+                                CardDetailsView(cardModel: card, cardViewModel: cardViewModel)
                             }
                         }
                     }
                 }.onAppear() {
                     cardViewModel.fetchCards()
                 }
-            }.navigationTitle(Constants.TITLE.CARD_LIST)
+            }.navigationTitle(Constants.Title.CardList)
                 .font(.headline)
         }
     }

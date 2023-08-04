@@ -14,56 +14,58 @@ struct CardBackground: ViewModifier {
     var creditCardExpiryDate : String
     var creditCardType       : String
     var creditCardLogo       : String
-    var bookmarkIcon         : Bool
-    
+    @Binding var isBookmarked: Bool
     
     func body(content: Content) -> some View {
+        
         content
-        VStack(alignment: .leading, spacing: 20) {
-            Image(systemName: bookmarkIcon ? "heart.fill" : "heart")
-                .foregroundColor(.red)
-
+        VStack(alignment: .leading, spacing: Constants.CardUIComponent.creditCardSpacing) {
+            Image(isBookmarked ? "bookmark_filled" : "bookmark")
             Spacer()
             
-            VStack(spacing: 6) {
+            VStack(spacing: Constants.CardUIComponent.creditCardMainTextSpacing) {
                 HStack {
                     Spacer()
                     Text(creditCardNumberText)
-                        .font(.system(size: 15, weight: .semibold, design: .rounded))
+                        .font(.system(size: Constants.FontSize.creditCardMainFontSize, weight: .semibold, design: .rounded))
                     Spacer()
                 }
                 
                 HStack {
                     Text(uid)
-                        .font(.system(size: 12, weight: .medium))
+                        .font(.system(size: Constants.FontSize.creditCardSubMainFontSize, weight: .medium))
                 }
             }
             
             HStack {
-                Text("\(Constants.COMMON_STRINGS.VALID_UP_TO) \(creditCardExpiryDate)")
-                    .font(.system(size: 12, weight: .medium, design: .serif))
+                Text("\(Constants.CommonStrings.ValidUpTo) \(creditCardExpiryDate)")
+                    .font(.system(size: Constants.FontSize.creditCardSubMainFontSize, weight: .medium, design: .default))
                 Spacer()
                 Image("\(creditCardLogo)_logo")
                     .resizable()
                     .scaledToFit()
-                    .frame(height: 40)
+                    .frame(height: Constants.CardUIComponent.creditCardLogoHeight)
                     .clipped()
-                    .cornerRadius(4)
+                    .cornerRadius(Constants.CardUIComponent.creditCardLogoCornerRadius)
             }
         }
         .foregroundColor(.white)
         .padding()
-        .background(
-            LinearGradient(colors: [Color(red: 176/255, green: 143/255, blue: 38/255, opacity: 1), Color.red], startPoint: .top, endPoint: .bottom)
-        )
-        .overlay(RoundedRectangle(cornerRadius: 6)
-                    .stroke(Color.black.opacity(0.5), lineWidth: 1)
-        )
-        .cornerRadius(6)
-        .shadow(radius: 5)
+        .background(Constants.Colors.linearGradient)
+        .overlayRoundedRectangleWithStroke()
+        .cornerRadius(Constants.CardUIComponent.cardCornerRadius)
+        .shadow(radius: Constants.CardUIComponent.shadowCardCornerRadius)
         .padding(.horizontal)
-        .padding(.top, 8)
     }
     
     
+}
+
+extension View {
+    func overlayRoundedRectangleWithStroke() -> some View {
+        self.overlay(
+            RoundedRectangle(cornerRadius: Constants.CardUIComponent.cardCornerRadius)
+                .stroke(Color.black.opacity(Constants.CardUIComponent.cardOpacity), lineWidth: Constants.CardUIComponent.cardLineWidth)
+        )
+    }
 }

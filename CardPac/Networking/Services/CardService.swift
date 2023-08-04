@@ -19,7 +19,7 @@ class CardService: CardServiceDelegate  {
     
     func getCards(completion: @escaping(Result<[Card], NetworkError>) -> Void) {
         
-        guard let url = URL(string: Constants.URLs.BASE_URL) else {
+        guard let url = URL(string: Constants.Urls.BaseUrl) else {
             return completion(.failure(.BadURL))
         }
         if isConnected() {

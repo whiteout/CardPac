@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text(Constants.URLs.BASE_URL)
+        Text(Constants.Urls.BaseUrl)
             .padding()
     }
 }

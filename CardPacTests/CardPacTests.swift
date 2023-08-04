@@ -18,7 +18,19 @@ class CardPacTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testSaveBookmark() throws {
+        
+        let cardViewModel = CardViewModel()
+        let testCard = Card(id: 1, uid: "123", creditCardNumber: "123", creditCardExpiryDate: "02/02/2025", creditCardType: "81238")
+        
+        XCTAssert(cardViewModel.bookmarkedCards.isEmpty)
+        
+        cardViewModel.saveBookedmarkCard(card: testCard)
+        let firstBookmarkCard = cardViewModel.bookmarkedCards.first
+        
+        XCTAssertEqual(cardViewModel.bookmarkedCards.count, 1)
+        XCTAssertEqual(firstBookmarkCard?.id, testCard.id)
+        
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         // Any test you write for XCTest can be annotated as throws and async.

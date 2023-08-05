@@ -18,6 +18,7 @@ class Constants {
         public static let CardList      = "Card List"
         public static let ShowBookMarks = "Show only Bookmarked Cards"
         public static let ShowAllCards  = "Show All Cards"
+        public static let Error         = "Error"
     }
     
     struct CommonStrings {
@@ -25,8 +26,15 @@ class Constants {
         public static let ValidUpTo   = "Valid up to :"
     }
     
-    struct APIErrorMessages {
+    struct ButtonStrings {
+        public static let Ok    = "OK"
+        public static let Retry = "Retry"
+    }
     
+    struct NetworkErrorMessages {
+        public static let BadUrl             = "Sorry! Invalid connection."
+        public static let DecodingError      = "Sorry! There's something wrong in getting the cards"
+        public static let NoDataError        = "Sorry! No Internet Connection"
     }
     
     struct CreditCardTypes {

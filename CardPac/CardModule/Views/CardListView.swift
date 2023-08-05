@@ -30,6 +30,12 @@ struct CardListView: View {
                 }
             }.navigationTitle(Constants.Title.CardList)
                 .font(.headline)
+                // Show alert when there's a network error, and an action to retry again
+                .alert(isPresented: $cardViewModel.showErrorAlert, content: {
+                    Alert(title: Text(Constants.Title.Error),
+                          message: Text(Constants.NetworkErrorMessages.NoDataError),
+                          dismissButton: .default(Text(Constants.ButtonStrings.Retry),
+                                                  action: cardViewModel.fetchCards))})
         }
     }
 }

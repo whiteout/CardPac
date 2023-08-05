@@ -7,10 +7,22 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case BadURL
-    case NoData
-    case DecodingError
+enum NetworkError: Error { //TODO: add String
+    case badUrl(message: String)
+    case noData(message: String)
+    case decodingError(message: String)
+    
+    var errorMessage: String {
+            switch self {
+            case .badUrl(let message):
+                return message
+            case .noData(let message):
+                return message
+            case .decodingError(let message):
+                return message
+            
+        }
+    }
 }
 
 

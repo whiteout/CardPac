@@ -20,17 +20,10 @@ class CardService: CardServiceDelegate  {
     func getCards(completion: @escaping(Result<[Card], NetworkError>) -> Void) {
         
         guard let url = URL(string: Constants.Urls.BaseUrl) else {
-            return completion(.failure(.BadURL))
+            return completion(.failure(.badUrl(message: Constants.NetworkErrorMessages.BadUrl)))
         }
-        if isConnected() {
-            NetworkManager().fetchRequest(type: [Card].self, url: url, completion: completion)
-        }
-       
+        
+        NetworkManager().fetchRequest(type: [Card].self, url: url, completion: completion)
     }
 
-   
-    private func isConnected() -> Bool{
-        return true
-    }
-    
 }

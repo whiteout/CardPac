@@ -11,6 +11,7 @@ import SwiftUI
 class CardViewModel: ObservableObject {
     let serviceHandler: CardServiceDelegate
     @Published var isShowBookmarkedCards = false
+    @Published var showErrorAlert = false
     
     init(serviceHandler: CardServiceDelegate = CardService()) {
         self.serviceHandler = serviceHandler
@@ -27,6 +28,7 @@ class CardViewModel: ObservableObject {
                         self.cards = cards
                     case .failure(let error):
                         print(error)
+                        self.showErrorAlert = true
                     }
                 }
             }

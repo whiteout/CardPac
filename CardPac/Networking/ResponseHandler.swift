@@ -17,7 +17,7 @@ class ResponseHandler: ResponseHandlerDelegate {
         if let response = response {
             return completion(.success(response))
         } else {
-            completion(.failure(.DecodingError))
+            completion(.failure(.decodingError(message: Constants.NetworkErrorMessages.DecodingError)))
         }
     }
     

@@ -17,6 +17,7 @@ struct CardListView: View {
             VStack {
                 Button(cardViewModel.isShowBookmarkedCards ? Constants.Title.ShowAllCards : Constants.Title.ShowBookMarks, action: cardViewModel.showBookmarkedCards)
                     .padding()
+                    .accessibility(identifier: Constants.Title.ShowBookMarks)
                 List() {
                     ForEach(cardViewModel.groupedSortedCards().keys.sorted(), id: \.self) { key in
                         Section(header: cardViewModel.modifiedSectionHeaderText(for: key)) {
